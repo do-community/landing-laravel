@@ -36,4 +36,4 @@ WORKDIR /var/www/html
 USER $user
 
 RUN composer install
-RUN php artisan migrate
+RUN php artisan migrate --force
