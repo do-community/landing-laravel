@@ -35,8 +35,6 @@ EXPOSE 80
 
 WORKDIR /var/www/html
 
-USER www-data
-
 RUN composer install
 
 CMD ["nginx", "-g", "daemon off;"]
