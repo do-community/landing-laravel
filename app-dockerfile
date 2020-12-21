@@ -29,6 +29,8 @@ RUN mkdir -p /home/$user/.composer && \
 
 USER $user
 
-WORKDIR /
+COPY . /var/www/html
+WORKDIR /var/www/html
 
 RUN composer install
+RUN php artisan migrate
