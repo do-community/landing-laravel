@@ -1,0 +1,46 @@
+FROM nginx
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    zip \
+    unzip \
+    libpq-dev \
+    php-fpm \
+    php-cli
+
+# Install PHP extensions
+RUN apt-get install -y \
+    php-pdo \
+    php-pgsql \
+    php-mbstring \
+    php-bcmath \
+    php-gd \
+    php-xml
+
+# Clear cache
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Copy Nginx conf file
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Get latest Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# Copy application files
+COPY . /var/www/html
+
+RUN chown -R www-data:www-data /var/www/html
+
+RUN ln -sf /dev/stdout /var/log/nginx/access.log \
+    && ln -sf /dev/stderr /var/log/nginx/error.log
+
+WORKDIR /var/www/html
+
+USER www-data
+
+RUN composer install
