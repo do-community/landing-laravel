@@ -1,8 +1,5 @@
 FROM php:7.4-fpm
 
-ARG user=sammy
-ARG uid=1000
-
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     nginx \
@@ -29,14 +26,17 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Copy application files
 COPY . /var/www/html
 
-# Create system user to run Composer and Artisan Commands
-RUN useradd -G www-data,root -u $uid -d /home/$user $user
-RUN mkdir -p /home/$user/.composer && \
-    chown -R $user:$user /home/$user && \
-    chown -R $user:www-data /var/www/html
+RUN chown -R www-data:www-data /var/www/html
 
 WORKDIR /var/www/html
 
-USER $user
+USER www-data
 
 RUN composer install
+
+RUN ln -sf /dev/stdout /var/log/nginx/access.log \
+    && ln -sf /dev/stderr /var/log/nginx/error.log
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
