@@ -32,10 +32,6 @@ RUN chown -R www-data:www-data /var/www/html
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
     && ln -sf /dev/stderr /var/log/nginx/error.log
 
-EXPOSE 80
-
 WORKDIR /var/www/html
 
 RUN composer install
-
-CMD ["nginx", "-g", "daemon off;"]
