@@ -1,0 +1,58 @@
+databases:
+- engine: PG
+  name: db
+  num_nodes: 1
+  size: db-s-dev-database
+  version: "12"
+name: landing-laravel
+region: ams
+services:
+- environment_slug: php
+  run_command: heroku-php-apache2 public/
+  envs:
+  - key: APP_NAME
+    scope: RUN_TIME
+    value:  Landing_Laravel
+  - key: APP_ENV
+    scope: RUN_TIME
+    value: dev
+  - key: APP_KEY
+    scope: RUN_TIME
+    value: base64:ffYPNP8kPeQDf8gE/qh3kWjk59p6gFY66kCKhhKUa2w=
+  - key: APP_DEBUG
+    scope: RUN_TIME
+    value: "1"
+  - key: APP_URL
+    scope: RUN_TIME
+    value: ${APP_URL}
+  - key: DATABASE_URL
+    scope: RUN_TIME
+    value: ${db.DATABASE_URL}
+  - key: DB_CONNECTION
+    scope: RUN_TIME
+    value: pgsql
+  - key: DB_HOST
+    scope: RUN_TIME
+    value: ${db.HOSTNAME}
+  - key: DB_PORT
+    scope: RUN_TIME
+    value: ${db.PORT}
+  - key: DB_DATABASE
+    scope: RUN_TIME
+    value: ${db.DATABASE}
+  - key: DB_USERNAME
+    scope: RUN_TIME
+    value: ${db.USERNAME}
+  - key: DB_PASSWORD
+    scope: RUN_TIME
+    value: ${db.PASSWORD}
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: do-community/landing-laravel
+  http_port: 8080
+  instance_count: 1
+  instance_size_slug: basic-xs
+  name: landing-laravel
+  routes:
+  - path: /
