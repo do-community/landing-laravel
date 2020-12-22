@@ -17,7 +17,6 @@ class CreateLinksTable extends Migration
             $table->id();
             $table->string('url', 200);
             $table->text('description');
-            $table->boolean('enabled')->default(true);
             $table->timestamps();
         });
     }
