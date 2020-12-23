@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Link;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\Yaml\Yaml;
@@ -15,7 +16,10 @@ class LinkSeeder extends Seeder
      */
     public function run()
     {
-        $this->importLinks();
+        //only import seeds if DB is empty.
+        if (!Link::count()) {
+            $this->importLinks();
+        }
     }
 
     /**
