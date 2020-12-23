@@ -1,0 +1,6 @@
+- url: https://digitalocean.com/community
+  description: DigitalOcean Community
+- url: https://digitalocean.com/community/tags/laravel
+  description: Laravel Tutorias at DigitalOcean
+- url: https://digitalocean.com/community/tags/php
+  description: PHP Tutorials at DigitalOcean
