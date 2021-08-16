@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Link extends Model
 {
-    use HasFactory;
+    public function link_list()
+    {
+        return $this->belongsTo(LinkList::class);
+    }
 }

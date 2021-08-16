@@ -3,9 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\LinkList;
 
-class CreateLinksTable extends Migration
+class CreateLinkListsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +13,12 @@ class CreateLinksTable extends Migration
      */
     public function up()
     {
-        Schema::create('links', function (Blueprint $table) {
+        Schema::create('link_lists', function (Blueprint $table) {
             $table->id();
-            $table->string('url', 200);
-            $table->text('description');
-            $table->foreignIdFor(LinkList::class);
             $table->timestamps();
+            $table->string('title', 60);
+            $table->string('slug', 60)->unique();
+            $table->text('description')->nullable();
         });
     }
 
@@ -30,6 +29,6 @@ class CreateLinksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('links');
+        Schema::dropIfExists('link_lists');
     }
 }

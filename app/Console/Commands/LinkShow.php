@@ -5,14 +5,14 @@ namespace App\Console\Commands;
 use App\Models\Link;
 use Illuminate\Console\Command;
 
-class LinkList extends Command
+class LinkShow extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'link:list';
+    protected $signature = 'link:show';
 
     /**
      * The console command description.
