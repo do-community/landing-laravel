@@ -38,9 +38,15 @@ class LinkShow extends Command
      */
     public function handle()
     {
-        $headers = [ 'id', 'url', 'description' ];
-        $links = Link::all(['id', 'url', 'description'])->toArray();
-        $this->table($headers, $links);
+        $headers = [ 'id', 'url', 'list', 'description' ];
+        $links = Link::all();
+
+        $table_rows = [];
+        foreach ($links as $link) {
+            $table_rows[] = [ $link->id, $link->url, $link->link_list->slug, $link->description ];
+        }
+
+        $this->table($headers, $table_rows);
 
         return 0;
     }
