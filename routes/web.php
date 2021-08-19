@@ -22,3 +22,16 @@ Route::get('/', function () {
         'lists' => LinkList::all()
     ]);
 });
+
+Route::get('/{slug}', function ($slug) {
+    $list = LinkList::where('slug', $slug)->first();
+    if (!$list) {
+        abort(404);
+    }
+
+    return view('index', [
+        'list' => $list,
+        'links' => $list->links,
+        'lists' => LinkList::all()
+    ]);
+})->name('link-list');
