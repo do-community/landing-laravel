@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Link;
+use App\Models\LinkList;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\Yaml\Yaml;
@@ -35,11 +36,18 @@ class LinkSeeder extends Seeder
         if (is_file($links_import_path)) {
             $links = $yaml->parsefile($links_import_path);
 
+            $default_list = new LinkList();
+            $default_list->title = "Default";
+            $default_list->description = "Default List";
+            $default_list->slug = "default";
+            $default_list->save();
+
             foreach ($links as $link) {
-                DB::table('links')->insert([
-                    'url' => $link['url'],
-                    'description' => $link['description']
-                ]);
+                $seed_link = new Link();
+                $seed_link->url = $link['url'];
+                $seed_link->description = $link['description'];
+
+                $default_list->links()->save($seed_link);
             }
         }
     }
