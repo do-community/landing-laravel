@@ -16,7 +16,8 @@ use App\Models\LinkList;
 */
 
 Route::get('/', function () {
-    $links = Link::all()->sortDesc();
+    $links = Link::orderBy('created_at', 'desc')->simplePaginate(4);
+
     return view('index', [
         'links' => $links,
         'lists' => LinkList::all()
@@ -31,7 +32,7 @@ Route::get('/{slug}', function ($slug) {
 
     return view('index', [
         'list' => $list,
-        'links' => $list->links()->orderBy('created_at', 'desc')->get(),
+        'links' => $list->links()->orderBy('created_at', 'desc')->simplePaginate(4),
         'lists' => LinkList::all()
     ]);
 })->name('link-list');
