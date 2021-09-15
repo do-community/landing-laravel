@@ -1,5 +1,28 @@
-# Landing Laravel - A Links Landing Laravel Application
+# Landing Laravel - A Demo Laravel Application
 
+This application was initially developed in the following tutorial series:
+[How To Build a Links Landing Application in PHP with Laravel and Docker Compose](https://www.digitalocean.com/community/tutorial_series/how-to-build-a-links-landing-page-in-php-with-laravel-and-docker-compose).
+
+A second series called [A Practical Introduction to Laravel Eloquent ORM](https://www.digitalocean.com/community/tutorial_series/a-practical-introduction-to-laravel-eloquent-orm) further develops this demo application to include new models and relationships.
+
+## Releases and Tutorials
+
+The application uses GitHub releases to support a progressive learning strategy, with multiple versions based on each part of the series. Here’s an overview of all available releases:
+
+### Laravel Introduction Series
+- [How To Build a Links Landing Application in PHP with Laravel and Docker Compose](https://www.digitalocean.com/community/tutorial_series/how-to-build-a-links-landing-page-in-php-with-laravel-and-docker-compose) [`0.1.1`](https://github.com/do-community/landing-laravel/releases/tag/0.1.1)
+
+
+### Eloquent Series
+- [Tutorial **1**: How To Create a One-to-Many Relationship in Laravel Eloquent](https://www.digitalocean.com/community/tutorials/how-to-create-a-one-to-many-relationship-in-laravel-eloquent) [`elo-tutorial1.0`](https://github.com/do-community/landing-laravel/releases/tag/elo-tutorial1.0)
+- [Tutorial **2**: How To Insert New Database Records in Laravel Eloquent](https://www.digitalocean.com/community/tutorials/how-to-insert-new-database-records-in-laravel-eloquent) [`elo-tutorial2.0`](https://github.com/do-community/landing-laravel/releases/tag/elo-tutorial2.0)
+- [Tutorial **3**: How To Populate a Database with Sample Data using Laravel Seeders and Eloquent Models](https://www.digitalocean.com/community/tutorials/how-to-populate-a-database-with-sample-data-using-laravel-seeders-and-eloquent-models) [`elo-tutorial3.0`](https://github.com/do-community/landing-laravel/releases/tag/elo-tutorial3.0)
+- [Tutorial **4**: How To Query the Database in Laravel with Eloquent Select](https://www.digitalocean.com/community/tutorials/how-to-query-the-database-in-laravel-with-eloquent-select) [`elo-tutorial4.0`](https://github.com/do-community/landing-laravel/releases/tag/elo-tutorial4.0)
+- [Tutorial **5**: How to Refine Database Queries with Eloquent Where](https://www.digitalocean.com/community/tutorials/how-to-refine-database-queries-in-laravel-with-eloquent-where) [`elo-tutorial5.0`](https://github.com/do-community/landing-laravel/releases/tag/elo-tutorial5.0)
+- [Tutorial **6**: How To Order Query Results in Laravel Eloquent](https://www.digitalocean.com/community/tutorials/how-to-order-query-results-in-laravel-eloquent) [`elo-tutorial6.0`](https://github.com/do-community/landing-laravel/releases/tag/elo-tutorial6.0)
+- [Tutorial **7**: How To Get Total Result Count in Laravel Eloquent](https://www.digitalocean.com/community/tutorials/how-to-get-total-result-count-in-laravel-eloquent) [`elo-tutorial7.0`](https://github.com/do-community/landing-laravel/releases/tag/elo-tutorial7.0)
+
+## About
 This application creates a links landing page where you can share relevant links to an audience.
 Links are initially imported from a `links.yml` file in the root of the application, and can be managed via Artisan commands (in the console / command-line).
 
@@ -9,8 +32,6 @@ Links are initially imported from a `links.yml` file in the root of the applicat
 
 ![Landing Laravel - application screenshot](https://assets.digitalocean.com/articles/landing_laravel_series/landing_final.png)
 
-This application was developed in the following tutorial series:
-[How To Build a Links Landing Application in PHP with Laravel and Docker Compose](https://www.digitalocean.com/community/tutorial_series/how-to-build-a-links-landing-page-in-php-with-laravel-and-docker-compose).
 
 ## Managing Links
 Links are initially imported from a `links.yml` file at the root of the repository. The seeds are only imported when the database is empty, so to not duplicate your links.
