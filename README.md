@@ -21,7 +21,8 @@ The application uses GitHub releases to support a progressive learning strategy,
 - [Tutorial **5**: How to Refine Database Queries with Eloquent Where](https://www.digitalocean.com/community/tutorials/how-to-refine-database-queries-in-laravel-with-eloquent-where) [`elo-tutorial5.0`](https://github.com/do-community/landing-laravel/releases/tag/elo-tutorial5.0)
 - [Tutorial **6**: How To Order Query Results in Laravel Eloquent](https://www.digitalocean.com/community/tutorials/how-to-order-query-results-in-laravel-eloquent) [`elo-tutorial6.0`](https://github.com/do-community/landing-laravel/releases/tag/elo-tutorial6.0)
 - [Tutorial **7**: How To Get Total Result Count in Laravel Eloquent](https://www.digitalocean.com/community/tutorials/how-to-get-total-result-count-in-laravel-eloquent) [`elo-tutorial7.0`](https://github.com/do-community/landing-laravel/releases/tag/elo-tutorial7.0)
-
+- [Tutorial **8**: How To Limit and Paginate Query Results in Laravel Eloquent](https://www.digitalocean.com/community/tutorials/how-to-limit-and-paginate-query-results-in-laravel-eloquent) [`elo-tutorial8.0`](https://github.com/do-community/landing-laravel/releases/tag/elo-tutorial8.0)
+ 
 ## About
 This application creates a links landing page where you can share relevant links to an audience.
 Links are initially imported from a `links.yml` file in the root of the application, and can be managed via Artisan commands (in the console / command-line).
