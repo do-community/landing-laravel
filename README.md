@@ -22,6 +22,8 @@ The application uses GitHub releases to support a progressive learning strategy,
 - [Tutorial **6**: How To Order Query Results in Laravel Eloquent](https://www.digitalocean.com/community/tutorials/how-to-order-query-results-in-laravel-eloquent) [`elo-tutorial6.0`](https://github.com/do-community/landing-laravel/releases/tag/elo-tutorial6.0)
 - [Tutorial **7**: How To Get Total Result Count in Laravel Eloquent](https://www.digitalocean.com/community/tutorials/how-to-get-total-result-count-in-laravel-eloquent) [`elo-tutorial7.0`](https://github.com/do-community/landing-laravel/releases/tag/elo-tutorial7.0)
 - [Tutorial **8**: How To Limit and Paginate Query Results in Laravel Eloquent](https://www.digitalocean.com/community/tutorials/how-to-limit-and-paginate-query-results-in-laravel-eloquent) [`elo-tutorial8.0`](https://github.com/do-community/landing-laravel/releases/tag/elo-tutorial8.0)
+- [Tutorial **9**: How To Update Database Records in Laravel Eloquent](https://www.digitalocean.com/community/tutorials/how-to-update-database-records-in-laravel-eloquent) [`elo-tutorial9.0`](https://github.com/do-community/landing-laravel/releases/tag/elo-tutorial9.0)
+- [Tutorial **10**: How To Delete Database Records in Laravel Eloquent](https://www.digitalocean.com/community/tutorials/how-to-delete-database-records-in-laravel-eloquent) [`elo-tutorial10.0`](https://github.com/do-community/landing-laravel/releases/tag/elo-tutorial10.0)
  
 ## About
 This application creates a links landing page where you can share relevant links to an audience.
