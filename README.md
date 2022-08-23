@@ -106,3 +106,8 @@ Then go to your App Platform dashboard to follow the build logs.
 You can find more details on how to use `doctl` and the App Spec file in [this post](https://dev.to/erikaheidi/deploying-a-laravel-application-to-digitalocean-app-platform-via-doctl-with-an-app-spec-yaml-file-4dib).
 
 
+
+
+### Infrastructure model
+
+![Infrastructure model](.infragenie/infrastructure_model.png)
